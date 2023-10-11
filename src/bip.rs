@@ -1,6 +1,9 @@
 use rusnap::{
     handler,
-    snap::{get_bip32_entropy, get_bip32_public_key, Curve},
+    snap::{
+        get_bip32_entropy, get_bip32_public_key, get_bip44_entropy, get_entropy_v1,
+        get_entropy_v1_salt, Curve,
+    },
 };
 
 #[handler]
@@ -14,4 +17,25 @@ pub async fn handle_bip32() {
         .await
         .unwrap();
     log::info!("Public Key: {:?}", res);
+}
+
+#[handler]
+pub async fn handle_bip44() {
+    let res = get_bip44_entropy(3).await.unwrap();
+
+    log::info!("Secret {:?}", res);
+}
+
+#[handler]
+pub async fn handle_entropy_v1() {
+    let res = get_entropy_v1().await.unwrap();
+
+    log::info!("{:?}", res);
+}
+
+#[handler]
+pub async fn handle_entropy_v1_salt() {
+    let res = get_entropy_v1_salt("Hello").await.unwrap();
+
+    log::info!("{:?}", res);
 }

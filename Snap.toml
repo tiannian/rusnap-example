@@ -10,10 +10,10 @@ dialog = {}
 notify = {}
 manage_state = {}
 
-# entropy = {}
+entropy = {}
 # manage_accounts = {}
 # ethereum_provider = {}
-# network_access = {}
+network_access = {}
 # transaction_insight = { allow_transaction_origin = true }
 
 [[permissions.bip32_entropy]]
@@ -24,14 +24,9 @@ curve = "secp256k1"
 path = "m/44'/3'"
 curve = "secp256k1"
 
+[[permissions.bip44_entropy]]
+coin_type = 3
 
-# [[permissions.bip32_entropy]]
-# path = "m/44'/2'"
-# curve = "secp256k1"
-#
-# [[permissions.bip44_entropy]]
-# coin_type = 3
-#
 # [[permissions.bip44_entropy]]
 # coin_type = 2
 #

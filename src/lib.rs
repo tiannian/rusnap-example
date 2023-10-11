@@ -3,6 +3,8 @@ use rusnap::{handler, types, Route};
 
 mod bip;
 mod dialog;
+mod net;
+mod rand;
 mod state;
 
 #[handler]
@@ -25,6 +27,11 @@ async fn main() {
         .at("update2", state::handle_update2)
         .at("get", state::handle_get)
         .at("bip32", bip::handle_bip32)
+        .at("bip44", bip::handle_bip44)
+        .at("entropy", bip::handle_entropy_v1)
+        .at("entropy_salt", bip::handle_entropy_v1_salt)
+        .at("network", net::handle_fetch)
+        .at("rand", rand::handle_rand)
         .serve();
 }
 
