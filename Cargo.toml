@@ -1,0 +1,21 @@
+[package]
+name = "rusnap-example"
+version = "0.1.0"
+authors = ["tiannian <dtiannian@gmail.com>"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+console_log = "1.0.0"
+log = "0.4.20"
+rusnap = { path = "../rusnap/std" }
+serde = { version = "1.0.188", features = ["derive"] }
+
+[build-dependencies]
+rusnap-build = "0.1"
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
