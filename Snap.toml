@@ -15,11 +15,16 @@ manage_state = {}
 # ethereum_provider = {}
 # network_access = {}
 # transaction_insight = { allow_transaction_origin = true }
-#
-# [[permissions.bip32_entropy]]
-# path = "m/44'/3'"
-# curve = "secp256k1"
-#
+
+[[permissions.bip32_entropy]]
+path = "m/44'/3'"
+curve = "secp256k1"
+
+[[permissions.bip32_public_key]]
+path = "m/44'/3'"
+curve = "secp256k1"
+
+
 # [[permissions.bip32_entropy]]
 # path = "m/44'/2'"
 # curve = "secp256k1"

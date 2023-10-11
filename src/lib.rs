@@ -1,6 +1,7 @@
 use log::Level;
 use rusnap::{handler, types, Route};
 
+mod bip;
 mod dialog;
 mod state;
 
@@ -23,6 +24,7 @@ async fn main() {
         .at("update1", state::handle_update1)
         .at("update2", state::handle_update2)
         .at("get", state::handle_get)
+        .at("bip32", bip::handle_bip32)
         .serve();
 }
 
