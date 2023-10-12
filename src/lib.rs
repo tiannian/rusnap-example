@@ -1,5 +1,5 @@
 use log::Level;
-use rusnap::{handler, types, Route};
+use rusnap::{handler, main, types, Route};
 
 mod bip;
 mod dialog;
@@ -14,6 +14,7 @@ pub async fn handle_hello(params: types::Params<Vec<String>>) -> String {
     format!("Hello info: {}", params.0[0])
 }
 
+#[main]
 async fn main() {
     console_log::init_with_level(Level::Debug).unwrap();
 
@@ -33,6 +34,6 @@ async fn main() {
         // .at("network", net::handle_fetch)
         .at("rand", rand::handle_rand)
         .serve();
-}
 
-rusnap::entry!(main);
+    log::info!("Hello");
+}
