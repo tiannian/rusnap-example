@@ -1,9 +1,9 @@
 use rusnap::{
-    handler,
-    snap::{
+    api::{
         get_bip32_entropy, get_bip32_public_key, get_bip44_entropy, get_entropy_v1,
         get_entropy_v1_salt, Curve,
     },
+    exports::handler,
 };
 
 #[handler]

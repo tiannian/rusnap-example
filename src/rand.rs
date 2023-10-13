@@ -1,5 +1,5 @@
 use rand_core::{OsRng, RngCore};
-use rusnap::handler;
+use rusnap::exports::handler;
 
 #[handler]
 pub async fn handle_rand() {

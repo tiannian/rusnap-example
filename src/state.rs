@@ -1,6 +1,6 @@
 use rusnap::{
-    handler,
-    snap::{state_get, state_update},
+    api::{state_get, state_update},
+    exports::handler,
 };
 use serde::{Deserialize, Serialize};
 

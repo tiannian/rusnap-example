@@ -1,6 +1,6 @@
 use rusnap::{
-    handler,
-    snap::{alert, confirm, notify, prompt, ui, NotifyType, UiComponent},
+    api::{alert, confirm, notify, prompt, ui, NotifyType, Result, UiComponent},
+    exports::handler,
 };
 
 pub fn build_ui() -> UiComponent {
@@ -16,8 +16,9 @@ pub fn build_ui() -> UiComponent {
 }
 
 #[handler]
-pub async fn handle_alert() {
-    alert(build_ui()).await.unwrap()
+pub async fn handle_alert() -> Result<()> {
+    alert(build_ui()).await?;
+    Ok(())
 }
 
 #[handler]

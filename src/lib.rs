@@ -1,9 +1,12 @@
 use log::Level;
-use rusnap::{handler, main, types, Route};
+use rusnap::{
+    exports::{handler, types, Route},
+    main,
+};
 
 mod bip;
 mod dialog;
-// mod net;
+mod net;
 mod rand;
 mod state;
 
@@ -31,7 +34,7 @@ async fn main() {
         .at("bip44", bip::handle_bip44)
         .at("entropy", bip::handle_entropy_v1)
         .at("entropy_salt", bip::handle_entropy_v1_salt)
-        // .at("network", net::handle_fetch)
+        .at("network", net::handle_fetch)
         .at("rand", rand::handle_rand)
         .serve();
 
