@@ -15,14 +15,12 @@ getrandom = { version = "0.2.10", features = ["js"] }
 # rusnap = { path = "../rusnap/rusnap" }
 serde = { version = "1.0.188", features = ["derive"] }
 rusnap = "0.1"
+rusnap-ethers = "0.1"
+ethers = { version = "2.0.10", default-features = false }
 
 [build-dependencies]
-# rusnap-build = { path = "../rusnap/rusnap-build" }
 rusnap-build = "0.1"
 
 [profile.release]
 # Tell `rustc` to optimize for small code size.
 opt-level = "s"
-
-# [patch.crates-io]
-# reqwest = { path = "../reqwest" }

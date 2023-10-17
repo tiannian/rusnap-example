@@ -7,6 +7,7 @@ use rusnap::{
 mod bip;
 mod dialog;
 // mod net;
+mod provider;
 mod rand;
 mod state;
 
@@ -36,6 +37,8 @@ async fn main() {
         .at("entropy_salt", bip::handle_entropy_v1_salt)
         // .at("network", net::handle_fetch)
         .at("rand", rand::handle_rand)
+        .at("chainid", provider::handle_chain_id)
+        .at("balance", provider::handle_balance)
         .serve();
 
     log::info!("Hello");

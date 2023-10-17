@@ -12,7 +12,7 @@ manage_state = {}
 
 entropy = {}
 # manage_accounts = {}
-# ethereum_provider = {}
+ethereum_provider = {}
 network_access = {}
 # transaction_insight = { allow_transaction_origin = true }
 
