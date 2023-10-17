@@ -12,11 +12,12 @@ console_log = "1.0.0"
 log = "0.4.20"
 rand_core = { version = "0.6.4", features = ["getrandom"] }
 getrandom = { version = "0.2.10", features = ["js"] }
-rusnap = { path = "../rusnap/rusnap" }
+# rusnap = { path = "../rusnap/rusnap" }
 serde = { version = "1.0.188", features = ["derive"] }
-reqwest = { version = "0.11.22", features = ["json"], default-features = false }
+rusnap = "0.1"
 
 [build-dependencies]
+# rusnap-build = { path = "../rusnap/rusnap-build" }
 rusnap-build = "0.1"
 
 [profile.release]
